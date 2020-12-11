@@ -1,19 +1,21 @@
 <template>
   <div class="container">
-    <div class="search_area">
-      <div>
-        <label for="location">Location</label>
-        <v-select id="location" v-model="location" :options="job_locations" />
-      </div>
+    <div class="search-container">
+      <div class="search_area">
+        <div>
+          <label for="location">Location</label>
+          <v-select id="location" v-model="location" :options="job_locations" />
+        </div>
 
-      <div v-if="location">
-        <label for="keyword">Search</label>
-        <input
-          type="text"
-          placeholder="Position, company"
-          id="keyword"
-          v-model="keyword"
-        />
+        <div v-if="location">
+          <label for="keyword">Search</label>
+          <input
+            type="text"
+            placeholder="Position, company"
+            id="keyword"
+            v-model="keyword"
+          />
+        </div>
       </div>
     </div>
     <div class="job-list-container">
@@ -99,17 +101,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-}
-.search_area {
+.search-container {
   position: sticky;
   top: 0;
-  padding: 1.5em;
+  padding: 1.5em 1em;
   background-color: #810090;
+
   color: white;
   margin-bottom: 2em;
+}
+.search_area {
   display: grid;
   gap: 1em;
+  max-width: 1268px;
+  margin: 0 auto;
   @media (min-width: 700px) {
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
@@ -122,21 +127,21 @@ export default {
   input {
     display: block;
     width: 100%;
-    border-radius: 8px;
-    padding: 6px;
+    padding: 8px;
     border: none;
   }
 }
 .job-list {
   display: grid;
   gap: 1em;
+  max-width: 1300px;
+
   @media (min-width: 700px) {
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
   }
   padding: 1em;
   margin: 0 auto;
-  overflow-y: scroll;
   .job {
     transition: background-color 150ms linear;
     cursor: pointer;
@@ -206,8 +211,8 @@ export default {
   background: #fff;
   border: none;
   color: #000;
-  border-radius: 8px;
-  padding: 4px;
+  border-radius: 0;
+  padding: 6px;
 }
 
 #location .vs__clear,
