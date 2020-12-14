@@ -144,13 +144,13 @@ export default {
   background-color: #810090;
   color: white;
   padding: 0.35em 1em;
-  font-size: 25px;
+  font-size: 23px;
 }
 .contact-button {
   color: #810090;
   border: 4px solid #810090;
   padding: 0.2em;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 500;
   margin-top: auto;
 }
@@ -251,7 +251,7 @@ export default {
 }
 @media (max-width: 700px) {
   .main {
-    padding: 3em 0 0;
+    padding: 2.5em 0 0;
   }
   .back-button {
     zoom: 0.8;
@@ -277,6 +277,7 @@ export default {
     .detail-company-info {
       box-shadow: none;
       padding: 0;
+      max-width: 50%;
       .map,
       .company-name {
         display: none;
