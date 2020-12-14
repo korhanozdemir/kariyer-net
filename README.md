@@ -1,5 +1,5 @@
 # kariyernet
-
+A responsive Vue.js project for kariyer.net. Users can choose a location and instantaneously search for a job with keywords.
 ## Project setup
 ```
 npm install
@@ -15,10 +15,15 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Built With
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Vue.js
+- Vuex 
+- Vue router
+- Webpack
+- Sass
+- Mocky.io for Fake api
+- Mockaroo for test data production
+
+
+
