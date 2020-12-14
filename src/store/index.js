@@ -69,6 +69,9 @@ const getters = {
   },
   getJobLocations: state => {
     return state.cities;
+  },
+  getChosenJob: state => {
+    return state.chosen_job;
   }
 };
 export default new Vuex.Store({

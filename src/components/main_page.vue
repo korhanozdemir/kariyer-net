@@ -1,10 +1,18 @@
 <template>
   <div class="container">
     <div class="search-container">
+      <div class="logo-container">
+        <img class="logo" src="/kariyernet-logo.png" alt="" />
+      </div>
       <div class="search_area">
         <div>
           <label for="location">Location</label>
-          <v-select id="location" v-model="location" :options="job_locations" />
+          <v-select
+            id="location"
+            v-model="location"
+            :options="job_locations"
+            placeholder="Choose a location"
+          />
         </div>
 
         <div v-if="location">
@@ -30,7 +38,7 @@
             <div>
               <h1 class="position-name">{{ job.positionName }}</h1>
 
-              <p class="company-name">{{ job.companyName }} LTD</p>
+              <p class="company-name">{{ job.companyName }}</p>
             </div>
 
             <img class="company-logo" :src="job.imageUrl" alt="" />
@@ -38,7 +46,7 @@
           <div class="job-bottom">
             <p class="address">{{ job.townName }}, {{ job.cityName }}</p>
             <div class="duration">
-              <img src="/duration-icon.svg" alt="" />
+              <img src="/icons/duration-icon.svg" alt="" />
               <p>{{ job.durationDay }} days</p>
             </div>
           </div>
@@ -77,13 +85,11 @@ export default {
       chooseJob: "chooseJob"
     }),
     selectJob(jobId) {
-      this.chooseJob(jobId);
       this.$router.push({ name: "jobDetail", params: { id: jobId } });
     }
   },
   watch: {
     location: function() {
-      //debugger; // eslint-disable-line no-debugger
       this.keyword = "";
       this.filterJobs(this.location);
       this.keyword_filtered_jobs = this.job_list;
@@ -109,6 +115,14 @@ export default {
 
   color: white;
   margin-bottom: 2em;
+}
+.logo-container {
+  max-width: 1268px;
+  margin: 0 auto 2em;
+
+  .logo {
+    width: 10em;
+  }
 }
 .search_area {
   display: grid;
